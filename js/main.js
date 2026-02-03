@@ -114,23 +114,20 @@
         });
     }
 
-    /* 스킬 무한 스크롤: 리스트 아이템 복제 → 한 세트 너비만큼 왼쪽으로 이동해 루프 */
+    // 스킬 무한 스크롤 복제
     function initSkillsScroll() {
-        var list = document.querySelector('.skills_list');
-        if (!list) return;
-
-        var items = list.querySelectorAll('.skill_item');
-        items.forEach(function(item) {
-            list.appendChild(item.cloneNode(true));
-        });
-
-        var all = list.querySelectorAll('.skill_item');
-        var half = all.length / 2;
-        if (all[half]) {
-            list.style.setProperty('--skills-set-width', all[half].offsetLeft + 'px');
+        const skillsList = document.querySelector('.skills_list');
+        const skillItems = Array.from(skillsList.children);
+        
+        // 2번 더 복제 (총 3세트)
+        for(let i = 0; i < 2; i++) {
+            skillItems.forEach(item => {
+                const clone = item.cloneNode(true);
+                skillsList.appendChild(clone);
+            });
         }
     }
-    
+
     /* 스무스 스크롤 기능 */
     function initSmoothScroll() {
         const navLinks = document.querySelectorAll('a.nav_link[href^="#"]');

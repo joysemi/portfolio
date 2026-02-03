@@ -637,18 +637,12 @@ p.slogan_ko {
 div.about_skills_wrap {
     width: 100%;
     overflow: hidden;
-    position: relative;
 }
 
 ul.skills_list {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 50px;
-    padding: 80px 0;
-    box-sizing: border-box;
     width: max-content;
-    flex-shrink: 0;
     animation: scrollSkills 30s linear infinite;
 }
 
@@ -657,7 +651,7 @@ ul.skills_list {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% / 3));
     }
 }
 
