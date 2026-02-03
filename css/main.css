@@ -1,0 +1,1005 @@
+/* 메인 컨텐츠 영역 */
+main#main_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 메인 비주얼 섹션 */
+section#visual {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.visual_content {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+h2.visual_title {
+    font-size: clamp(4rem, 10vw, 150px);
+    font-weight: 600;
+    line-height: 150px;
+    letter-spacing: -2%;
+    color: #222;
+    margin: 74px 0;
+}
+
+.flower_img {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-bottom: 15px;
+    animation: rotateFlower 3s linear infinite;
+}
+
+@keyframes rotateFlower {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+div.visual_hashtag_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1.5em, 2.6vw, 3.125em);
+    margin-top: 0;
+}
+
+span.visual_hashtag {  
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: #FF6E58;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 24px;
+    transition: background-color 0.2s;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.visual_hashtag:hover {   
+    background-color: rgba(255, 110, 88, 0.15);
+}
+
+/* 프로젝트 섹션 */
+section#project {
+    width: 100%;
+    max-width: 1680px;
+    padding: 120px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2.section_title {
+    font: 600 3.75rem/3rem 'Montserrat';
+    color: #FF6E58;
+    margin-bottom: 200px;
+    padding-bottom: 26px;
+    position: relative;
+    display: inline-block; /*텍스트길이대로 밑줄 */
+}
+
+h2.section_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #FF6E58;
+}
+
+div.project_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15.625vw;
+}
+
+article.project_item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6.875rem;
+}
+
+/* 프로젝트 이미지 영역 */
+div.project_img_wrap {
+    width: 100%;
+    max-width: 730px;
+}
+
+img.forest_kids_img,
+img.film_clinic_img,
+img.VOGE_magazine_img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* 프로젝트 카드 영역 */
+div.project_card {
+    width: 100%;
+    max-width: 675px;
+}
+
+h3.project_title {
+    font: 600 1.875rem/2.25rem 'Montserrat';
+    color: #222;
+    text-indent: 4px;
+    margin-bottom: 16px;
+}
+
+p.project_desc {
+    font: 400 1.125rem/2rem 'Montserrat';
+    color: #555;
+    text-indent: 6px;
+    margin-bottom: 55px;
+}
+
+div.project_info_wrap {
+    background-color: #FFFEE9;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+p.project_scope {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: #222;
+}
+
+p.project_tag {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: #FF6E58;
+    display: inline-block;
+}
+
+/* 프로젝트 버튼 */
+div.project_btn_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+a.project_btn {
+    display: inline-block;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1.125rem;
+    color: #222;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.project_btn:first-child {
+    background-color: #FF6E58;
+    color: #fff;
+    border: none;
+}
+
+.project_btn:first-child:hover {
+    background-color: #e55a47;
+}
+
+.project_btn:not(:first-child):hover {
+    background-color: #f5f5f5;
+}
+
+/* 디자인 섹션 */
+section#design {
+    width: 100%;
+    max-width: 1680px;
+    padding: 120px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2.design_title {
+    margin-bottom: 80px;
+}
+
+div.design_tab_menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 60px;
+}
+
+button.design_tab {
+    display: inline-block;
+    padding: 10px 24px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1.125rem;
+    color: #222;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button.design_tab:hover {
+    background-color: #FF6E58;
+    color: #fff;
+    border: none;
+}
+
+button.design_tab.active {
+    background-color: #FF6E58;
+    color: #fff;
+    border: none;
+}
+
+div.design_content_wrap {
+    width: 100%;
+    max-width: 1680px;
+}
+
+/* 탭별 컨텐츠: 비활성 숨김, 활성만 표시 */
+div.design_content {
+    display: none;
+}
+
+div.design_content.active{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 725px;   /* 행 높이 고정 → 725px 넘어가지 않음 */
+    gap: 45px;
+}
+div.design_content.banner_design.active {
+    grid-auto-rows: auto;
+    align-items: stretch;
+}
+
+div.design_content.logo_icon_design.active {
+    grid-auto-rows: auto;
+}
+
+div.design_item {
+    width: 100%;
+    max-height: 725px;
+    min-width: 0;
+    min-height: 0;           
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+div.design_item.banner_item {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    max-height: none;
+}
+
+div.design_item.banner_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+div.design_item.logo_icon_item {
+    max-height: auto;
+}
+
+div.design_item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.website_design_text_box {
+    background-color: #FFFEE9;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+h3.website_design_title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 2rem;
+}
+
+p.website_design_desc {
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-indent: 6px;
+    color: #555;
+}
+
+p.website_design_tool {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #777;
+    margin-top: 4rem;
+}
+
+/* 아이템 호버: 흰색 반투명 오버레이 */
+div.design_item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+div.design_item:hover::before {
+    opacity: 1;
+}
+
+div.design_item .design_click_text {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #222;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.4;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+    pointer-events: none;
+}
+
+div.design_item:hover .design_click_text {
+    opacity: 1;
+}
+
+/* 리뉴얼 웹, 상페 — 스크롤 */
+div.design_item_scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div.design_item_scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+div.design_item_scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+div.design_item_scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+div.design_item_scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* 디자인 이미지 모달  */
+div.design_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+div.design_modal.active {
+    display: flex;
+}
+
+div.design_modal_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+div.design_modal_content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10001;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+img.design_modal_img {
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.3s;
+}
+
+div.design_modal_loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.25rem;
+    z-index: 10003;
+    display: none;
+}
+
+button.design_modal_close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+button.design_modal_close:hover {
+    opacity: 0.8;
+}
+
+/* About Me 섹션 */
+section#about {
+    width: 100%;
+    max-width: 1680px;
+    padding: 120px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2.about_title {
+    margin-bottom: 180px;
+}
+
+div.about_profile_wrap {
+    width: 100%;
+    max-width: 1480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 60px;
+}
+
+div.about_profile_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+div.about_intro_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+div.about_intro {
+    width: 100%;
+    max-width: 1100px;
+    background-color: #FFFEE9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+p.intro_text {
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    margin-bottom: 1.125rem;
+    text-align: justify;
+}
+
+p.intro_text:last-child {
+    margin-bottom: 0;
+}
+
+a.resume_link {
+    display: inline-block;
+    font-size: 1.125rem;
+    color: #FF6E58;
+    margin-top: 16px;
+}
+
+div.about_info_wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1480px;
+    padding-top: 50px;
+    margin-bottom: 80px;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+}
+
+div.about_info_item {
+    width: 100%;
+}
+
+h3.info_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 24px;
+}
+
+div.info_list {
+    position: relative;
+    padding-left: 40px;
+}
+
+div.info_list::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #FF6E58;
+}
+
+p.info_item {
+    margin-bottom: 16px;
+}
+
+span.info_term {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+    margin-right: 8px;
+}
+
+span.info_desc {
+    font-size: 1rem;
+    color: #222;
+}
+
+/* 스킬영역 */
+div.about_slogan_wrap {
+    width: 100%;
+    text-align: center;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+
+p.slogan_en {
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+p.slogan_ko {
+    font-size: 1.125rem;
+    color: #222;
+    line-height: 1.6;
+}
+
+div.about_skills_wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+ul.skills_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 0;
+    box-sizing: border-box;
+    width: max-content;
+    flex-shrink: 0;
+    animation: scrollSkills 30s linear infinite;
+}
+
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+li.skill_item {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+img.skill_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* 연락 섹션 */
+section#contact {
+    width: 100%;
+    max-height: 640px;
+    background-color: #FF6E58;
+    padding: 120px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2.contact_title {
+    font: 600 3.75rem/3rem 'Montserrat';
+    color: #fff;
+    margin-bottom: 200px;
+    padding-bottom: 26px;
+    position: relative;
+    display: inline-block; /*텍스트길이대로 밑줄 */
+}
+
+h2.contact_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+}
+
+div.contact_email_wrap {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+img.contact_flower_img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    left: -90px;
+    top: -80px;
+    animation: rotateFlower 3s linear infinite;
+}
+
+a.contact_email {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+p.contact_slogan {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+/* 커스텀 커서 */
+div.custom_cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(40%, 40%);
+    transition: transform 0.1s ease;
+}
+
+div.custom_cursor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* 반응형 디자인 */
+
+/* 태블릿 (1024px 이하) - 디자인 섹션 */
+@media screen and (max-width: 1024px) {
+    section#design {
+        padding: 80px 20px;
+    }
+
+    h2.design_title {
+        margin-bottom: 48px;
+    }
+
+    div.design_tab_menu {
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    button.design_tab {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+
+    div.design_content.website_design.active,
+    div.design_content.detail_design.active {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 560px;
+        gap: 32px;
+    }
+
+    div.design_content.website_design.active .website_design_text_box {
+        grid-column: 1 / -1;
+    }
+
+    div.design_content.banner_design.active,
+    div.design_content.logo_icon_design.active {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    div.design_item {
+        max-height: 560px;
+    }
+
+    div.design_item.banner_item {
+        aspect-ratio: 1 / 1;
+        max-height: none;
+    }
+
+    div.design_item.logo_icon_item {
+        max-height: 360px;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    /* 프로젝트 섹션 */
+    section#project {
+        padding: 60px 16px;
+    }
+
+    h2.section_title {
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+
+    div.project_list {
+        gap: 120px;
+    }
+
+    article.project_item {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    div.project_img_wrap {
+        max-width: 100%;
+    }
+
+    div.project_card {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    h3.project_title {
+        font-size: 1.5rem;
+    }
+
+    div.project_btn_wrap {
+        justify-content: center;
+    }
+
+    /* 디자인 섹션 */
+    section#design {
+        padding: 60px 16px;
+    }
+
+    h2.design_title {
+        margin-bottom: 32px;
+    }
+
+    div.design_tab_menu {
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+
+    button.design_tab {
+        padding: 6px 14px;
+        font-size: 0.875rem;
+    }
+
+    div.design_content.website_design.active,
+    div.design_content.detail_design.active,
+    div.design_content.banner_design.active,
+    div.design_content.logo_icon_design.active {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    div.design_content.website_design.active,
+    div.design_content.detail_design.active {
+        grid-auto-rows: 400px;
+    }
+
+    div.design_item,
+    div.design_item.website_item,
+    div.design_item.detail_item {
+        max-height: 400px;
+    }
+
+    div.design_item.banner_item {
+        aspect-ratio: 1 / 1;
+        max-height: none;
+    }
+
+    div.design_item.logo_icon_item {
+        max-height: 280px;
+    }
+
+    .website_design_text_box {
+        padding: 2rem 1rem;
+    }
+
+    h3.website_design_title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p.website_design_desc,
+    p.website_design_tool {
+        font-size: 0.9375rem;
+        line-height: 1.6rem;
+    }
+
+    div.design_modal_content {
+        padding: 12px;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    img.design_modal_img {
+        max-width: 100%;
+        max-height: calc(100vh - 64px);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    button.design_modal_close {
+        top: 8px;
+        right: 8px;
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+
+    /* 메인 비주얼 섹션 */
+    div.visual_hashtag_list {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    span.visual_hashtag {
+        font-size: 0.875rem;
+        padding: 6px 12px;
+    }
+
+
+    /* 자기소개 섹션 */
+    section#about {
+        padding: 60px 16px;
+    }
+
+    div.about_profile_wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+
+    div.about_profile_img {
+        width: 200px;
+        height: 200px;
+    }
+
+    div.about_intro {
+        width: 100%;
+        min-height: auto;
+        text-align: center;
+    }
+
+    p.intro_text {
+        font-size: 1rem;
+    }
+
+    ul.skills_list {
+        gap: 24px;
+    }
+
+    li.skill_item {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* 연락 섹션 */
+    section#contact {
+        height: auto;
+        padding: 60px 16px;
+    }
+
+    h2.contact_title {
+        font-size: 2rem;
+        margin-bottom: 120px;
+        padding-bottom: 16px;
+    }
+
+
+    img.contact_flower_img {
+        width: 60px;
+        height: 60px;
+        left: -50px;
+        top: -50px;
+    }
+
+    a.contact_email {
+        font-size: 1.5rem;
+    }
+
+    p.contact_slogan {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,86 @@
+/* Reset CSS - 웹표준을 위한 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 시맨틱 태그 초기화 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+
+/* 리스트 스타일 제거 */
+ul, ol {
+    list-style: none;
+}
+
+/* 링크 스타일 초기화 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 이미지 최적화 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 버튼 초기화 */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* 접근성을 위한 포커스 스타일 */
+*:focus-visible {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* 숨김 처리 */
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
