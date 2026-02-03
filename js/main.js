@@ -51,65 +51,39 @@
         showPanel(0);
     }
 
-    /* 디자인 섹션: 아이템 클릭 시 모달 열기 (원본 이미지 크기) */
+    /* 디자인 섹션: 아이템 클릭 시 모달 열기 */
     function initDesignModal() {
-        var modal = document.getElementById('design_modal');
-        var modalImg = modal && modal.querySelector('.design_modal_img');
-        var modalClose = modal && modal.querySelector('.design_modal_close');
-        var modalOverlay = modal && modal.querySelector('.design_modal_overlay');
-        var modalContent = modal && modal.querySelector('.design_modal_content');
-        var loadingEl = modal && modal.querySelector('.design_modal_loading');
+        const modal = document.getElementById('design_modal');
+        const modalImg = modal.querySelector('.design_modal_img');
+        const closeBtn = modal.querySelector('.design_modal_close');
+        const overlay = modal.querySelector('.design_modal_overlay');
+        const content = modal.querySelector('.design_modal_content');
 
-        if (!modal || !modalImg) return;
+        document.querySelectorAll('.design_item img').forEach(img => {
+            img.addEventListener('click', () => {
+            modalImg.src = img.src;
+            modalImg.alt = img.alt || '';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
 
-        var designItems = document.querySelectorAll('.design_item');
-        designItems.forEach(function(item) {
-            var img = item.querySelector('img');
-            if (!img) return;
-
-            item.addEventListener('click', function() {
-                var src = img.getAttribute('src');
-                var alt = img.getAttribute('alt') || '디자인 이미지';
-                if (!src) return;
-
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-
-                if (loadingEl) loadingEl.style.display = 'block';
-                modalImg.style.opacity = '0';
-                modalImg.removeAttribute('src');
-
-                var newImg = new Image();
-                newImg.onload = function() {
-                    modalImg.setAttribute('src', src);
-                    modalImg.setAttribute('alt', alt);
-                    if (loadingEl) loadingEl.style.display = 'none';
-                    modalImg.style.opacity = '1';
-                };
-                newImg.onerror = function() {
-                    if (loadingEl) {
-                        loadingEl.textContent = '이미지를 불러올 수 없습니다';
-                        loadingEl.style.display = 'block';
-                    }
-                };
-                newImg.src = src;
+            //스크롤 위치 초기화
+            content.scrollTop = 0;
+            content.scrollLeft = 0;
             });
         });
 
         function closeModal() {
             modal.classList.remove('active');
-            document.body.style.overflow = '';
-            if (loadingEl) {
-                loadingEl.style.display = 'none';
-                loadingEl.textContent = '로딩 중...';
-            }
             modalImg.removeAttribute('src');
-            modalImg.style.opacity = '0';
+            document.body.style.overflow = '';
+
+            content.scrollTop = 0;
+            content.scrollLeft = 0;
         }
 
-        if (modalClose) modalClose.addEventListener('click', closeModal);
-        if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
-        document.addEventListener('keydown', function(e) {
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+        document.addEventListener('keydown', e => {
             if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
         });
     }

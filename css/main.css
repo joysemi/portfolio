@@ -410,80 +410,53 @@ div.design_item_scroll::-webkit-scrollbar-thumb:hover {
 }
 
 /* 디자인 이미지 모달  */
-div.design_modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10000;
-    align-items: center;
-    justify-content: center;
+.design_modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 10000;
 }
 
-div.design_modal.active {
-    display: flex;
+.design_modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-div.design_modal_overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    cursor: pointer;
+.design_modal_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
 }
 
-div.design_modal_content {
-    position: relative;
-    max-width: 95vw;
-    max-height: 95vh;
-    overflow-y: auto;
-    overflow-x: auto;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 10001;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+.design_modal_content {
+  position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: auto; 
 }
 
-img.design_modal_img {
-    width: auto;
-    height: auto;
-    max-width: none;
-    max-height: none;
-    display: block;
-    object-fit: contain;
-    transition: opacity 0.3s;
+.design_modal_img {
+  display: block;
+  margin: auto;  
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-div.design_modal_loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.25rem;
-    z-index: 10003;
-    display: none;
-}
-
-button.design_modal_close {
-    position: absolute;
-    top: -48px;
-    right: 0;
-    width: 48px;
-    height: 48px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 10002;
+.design_modal_close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 2.4rem;
+  cursor: pointer;
+  z-index: 10001;
 }
 
 button.design_modal_close:hover {
