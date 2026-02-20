@@ -24,10 +24,22 @@ div.visual_content {
 h2.visual_title {
     font-size: clamp(4rem, 10vw, 150px);
     font-weight: 600;
-    line-height: 150px;
-    letter-spacing: -2%;
-    color: #222;
+    line-height: 80px;
+    color: #333;
     margin: 74px 0;
+}
+
+span.hello_title {
+    font-family: 'Figtree';
+}
+
+span.am_title {
+    font-family: 'Playfair Display';
+    font-style: italic; 
+}
+
+span.name_title {
+    font-family: 'Montserrat';
 }
 
 .flower_img {
@@ -904,6 +916,11 @@ div.custom_cursor img {
     }
 
     /* 메인 비주얼 섹션 */
+    h2.visual_title {
+        line-height: 0px;
+        letter-spacing: -4%;
+    }
+
     div.visual_hashtag_list {
         flex-direction: column;
         align-items: center;
