@@ -4,6 +4,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         initSmoothScroll();
         initHeaderScroll();
+        initProjectScrollAnimation();
         initSkillsScroll();
         initCustomCursor();
         initDesignTabs();
@@ -118,27 +119,12 @@
 
                 if (targetElement) {
                     e.preventDefault();
-                    
-                    // GSAP ScrollToPlugin 사용
-                    if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
-                        gsap.registerPlugin(ScrollToPlugin);
-                        gsap.to(window, {
-                            duration: 1,
-                            scrollTo: {
-                                y: targetElement,
-                                offsetY: 80 // 헤더 높이만큼 오프셋
-                            },
-                            ease: 'power2.inOut'
-                        });
-                    } else {
-                        // GSAP이 없을 경우 기본 스무스 스크롤
-                        const headerHeight = 80;
-                        const targetPosition = targetElement.offsetTop - headerHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+                    const headerHeight = 80;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
@@ -154,26 +140,36 @@
 
                 if (targetElement) {
                     e.preventDefault();
-                    
-                    if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
-                        gsap.registerPlugin(ScrollToPlugin);
-                        gsap.to(window, {
-                            duration: 1,
-                            scrollTo: {
-                                y: targetElement,
-                                offsetY: 0
-                            },
-                            ease: 'power2.inOut'
-                        });
-                    } else {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 }
             });
         }
+    }
+
+    /* 프로젝트 아이템 스크롤 애니메이션 */
+    function initProjectScrollAnimation() {
+        const projectItems = document.querySelectorAll('.project_list .project_item');
+        if (!projectItems.length || typeof gsap === 'undefined') return;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        projectItems.forEach(function(item) {
+            gsap.from(item, {
+                y: 140,
+                opacity: 0.7,
+                ease: 'sine.out',
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 100%',
+                    end: 'top 30%',
+                    scrub: 1.5,
+                    //markers: true,
+                }
+            });
+        });
     }
 
     /* 헤더 스크롤 효과 */
