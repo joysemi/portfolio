@@ -339,7 +339,7 @@ p.website_design_desc {
 
 p.website_design_tool {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     color: #777;
     margin-top: 4rem;
 }
@@ -352,7 +352,7 @@ div.design_item::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.85);
     opacity: 0;
     transition: opacity 0.3s;
     z-index: 1;
@@ -741,7 +741,8 @@ div.custom_cursor img {
     }
 
     div.design_content.website_design.active,
-    div.design_content.detail_design.active {
+    div.design_content.detail_design.active,
+    div.design_content.banner_design.active {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 560px;
         gap: 32px;
@@ -751,19 +752,22 @@ div.custom_cursor img {
         grid-column: 1 / -1;
     }
 
-    div.design_content.banner_design.active,
     div.design_content.logo_icon_design.active {
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
     }
 
-    div.design_item {
+    div.design_item,
+    div.design_item.banner_item {
         max-height: 560px;
     }
 
     div.design_item.banner_item {
-        aspect-ratio: 1 / 1;
-        max-height: none;
+        aspect-ratio: auto;
+    }
+
+    div.design_item.banner_item img {
+        object-fit: cover;
     }
 
     div.design_item.logo_icon_item {
@@ -837,19 +841,24 @@ div.custom_cursor img {
     }
 
     div.design_content.website_design.active,
-    div.design_content.detail_design.active {
+    div.design_content.detail_design.active,
+    div.design_content.banner_design.active {
         grid-auto-rows: 400px;
     }
 
     div.design_item,
     div.design_item.website_item,
-    div.design_item.detail_item {
+    div.design_item.detail_item,
+    div.design_item.banner_item {
         max-height: 400px;
     }
 
     div.design_item.banner_item {
-        aspect-ratio: 1 / 1;
-        max-height: none;
+        aspect-ratio: auto;
+    }
+
+    div.design_item.banner_item img {
+        object-fit: cover;
     }
 
     div.design_item.logo_icon_item {
@@ -869,6 +878,7 @@ div.custom_cursor img {
     p.website_design_tool {
         font-size: 0.9375rem;
         line-height: 1.6rem;
+        margin-bottom: 0.2rem;
     }
 
     div.design_modal_content {
@@ -931,6 +941,10 @@ div.custom_cursor img {
 
     p.intro_text {
         font-size: 1rem;
+    }
+
+    div.about_info_wrap {
+        grid-template-columns: 1fr;
     }
 
     ul.skills_list {

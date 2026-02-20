@@ -111,6 +111,47 @@ header#header_wrap.header_scrolled .nav_link::after {
 }
 /* 메인메뉴 */
 
+/* 햄버거 버튼 (데스크톱에서 숨김) */
+button.menu_toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    z-index: 1001;
+    transition: opacity 0.2s;
+}
+button.menu_toggle:hover {
+    opacity: 0.8;
+}
+button.menu_toggle .menu_toggle_bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s, opacity 0.3s;
+}
+body.menu_open button.menu_toggle .menu_toggle_bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+body.menu_open button.menu_toggle .menu_toggle_bar:nth-child(2) {
+    opacity: 0;
+}
+body.menu_open button.menu_toggle .menu_toggle_bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/* 햄버거 버튼 */
+
 
 /* 푸터 영역 */
 footer#footer_wrap {
@@ -160,15 +201,71 @@ a.footer_link {
 }
 
 @media screen and (max-width: 768px) {
+    /* 햄버거 버튼 표시  */
+    button.menu_toggle {
+        display: flex;
+        color: #fff;
+    }
 
-    .nav_link { 
-        font-size: 16px;
+    /* 메인메뉴: 기본 숨김, 풀스크린 오버레이 */
+    nav#mainmenu_wrap {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        background-color: rgba(255, 110, 88, 0.98);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    body.menu_open nav#mainmenu_wrap {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    ul.mainmenu_list {
+        flex-direction: column;
+        padding: 220px 24px;
+    }
+
+    ul.mainmenu_list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    a.nav_link {
+        font-size: 2rem;
+        color: #fff;
+        padding: 12px 0;
+    }
+
+    header#header_wrap.header_scrolled a.nav_link {
+        color: #fff;
+    }
+
+    .nav_link::after,
+    header#header_wrap.header_scrolled .nav_link::after {
+        background-color: #fff;
+    }
+
+    body.menu_open button.menu_toggle {
+        color: #fff;
+    }
+
+    header#header_wrap.header_scrolled button.menu_toggle {
+        color: #222;
     }
 
     div.footer_links {
         gap: 30px;
     }
-    
 }
 
 

@@ -5,6 +5,7 @@
         initSmoothScroll();
         initHeaderScroll();
         initProjectScrollAnimation();
+        initMobileMenu();
         initSkillsScroll();
         initCustomCursor();
         initDesignTabs();
@@ -191,6 +192,31 @@
                 // 프로젝트 섹션 이전: 주황색 배경
                 header.classList.remove('header_scrolled');
             }
+        });
+    }
+
+    /* 모바일 햄버거 메뉴 */
+    function initMobileMenu() {
+        var toggleBtn = document.querySelector('button.menu_toggle');
+        var navWrap = document.getElementById('mainmenu_wrap');
+        var navLinks = document.querySelectorAll('#mainmenu_wrap .nav_link');
+        if (!toggleBtn || !navWrap) return;
+
+        function setMenuOpen(open) {
+            document.body.classList.toggle('menu_open', open);
+            toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggleBtn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            setMenuOpen(!document.body.classList.contains('menu_open'));
+        });
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                setMenuOpen(false);
+            });
         });
     }
 
