@@ -255,12 +255,13 @@ a.footer_link {
         background-color: #fff;
     }
 
-    body.menu_open button.menu_toggle {
-        color: #fff;
-    }
-
     header#header_wrap.header_scrolled button.menu_toggle {
         color: #222;
+    }
+
+    body.menu_open button.menu_toggle,
+    body.menu_open header#header_wrap button.menu_toggle {
+        color: #fff;
     }
 
     div.footer_links {
